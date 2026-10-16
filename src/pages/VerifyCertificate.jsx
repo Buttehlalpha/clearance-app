@@ -29,7 +29,7 @@ export default function VerifyCertificate() {
   }
 
   return (
-    <div className="min-h-screen bg-cream flex items-center justify-center px-6 py-16">
+    <div className="min-h-screen bg-cream flex items-center justify-center px-4 sm:px-6 py-10 sm:py-16">
       <div className="w-full max-w-md">
         <Link to="/" className="font-display text-xl">Campus Clearance</Link>
         <h1 className="mt-6 text-2xl font-medium">Verify a certificate</h1>
@@ -85,10 +85,10 @@ export default function VerifyCertificate() {
               </div>
             </div>
             <dl className="mt-4 space-y-1.5 text-sm">
-              <div className="flex justify-between"><dt className="text-ink/50">Matric number</dt><dd>{result.matric_number ?? '—'}</dd></div>
-              <div className="flex justify-between"><dt className="text-ink/50">Session</dt><dd>{result.clearance_applications?.session}</dd></div>
-              <div className="flex justify-between"><dt className="text-ink/50">Reference</dt><dd className="font-mono text-xs">{result.certificate_ref}</dd></div>
-              <div className="flex justify-between"><dt className="text-ink/50">Issued</dt><dd>{new Date(result.issued_at).toLocaleDateString()}</dd></div>
+              <div className="flex justify-between gap-4"><dt className="text-ink/50">Matric number</dt><dd>{result.matric_number ?? '—'}</dd></div>
+              <div className="flex justify-between gap-4"><dt className="text-ink/50">Session</dt><dd>{result.clearance_applications?.session}</dd></div>
+              <div className="flex justify-between gap-4"><dt className="text-ink/50">Reference</dt><dd className="font-mono text-xs break-all text-right">{result.certificate_ref}</dd></div>
+              <div className="flex justify-between gap-4"><dt className="text-ink/50">Issued</dt><dd>{new Date(result.issued_at).toLocaleDateString()}</dd></div>
             </dl>
           </motion.div>
         )}

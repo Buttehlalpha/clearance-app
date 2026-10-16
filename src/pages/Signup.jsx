@@ -43,7 +43,11 @@ export default function Signup() {
 
     setSubmitting(false)
     if (error) {
-      setError(error.message)
+      setError(
+        error.message.toLowerCase().includes('database error')
+          ? 'This matriculation number is already registered. Each account needs its own unique matric number.'
+          : error.message
+      )
       return
     }
     if (data.session) {
@@ -72,7 +76,7 @@ export default function Signup() {
       <form onSubmit={handleSubmit} className="space-y-4">
         <Field label="Full name" name="full_name" value={form.full_name} onChange={handleChange} required />
         <Field label="Matriculation number" name="matric_number" value={form.matric_number} onChange={handleChange} required placeholder="CSC/2021/001" />
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <Field label="Department" name="department" value={form.department} onChange={handleChange} />
           <Field label="Faculty" name="faculty" value={form.faculty} onChange={handleChange} />
         </div>

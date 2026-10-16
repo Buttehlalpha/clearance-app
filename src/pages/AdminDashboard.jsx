@@ -49,7 +49,7 @@ export default function AdminDashboard() {
   return (
     <div>
       <motion.div initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
-        <h1 className="text-3xl font-medium">
+        <h1 className="text-2xl sm:text-3xl font-medium">
           Welcome back{profile?.full_name ? `, ${profile.full_name.split(' ')[0]}` : ''}.
         </h1>
         <p className="mt-1.5 text-ink/60">System-wide clearance overview.</p>
@@ -66,7 +66,7 @@ export default function AdminDashboard() {
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.5 }}
-        className="mt-10 rounded-2xl border border-line bg-white p-6"
+        className="mt-10 rounded-2xl border border-line bg-white p-4 sm:p-6"
       >
         <h2 className="font-medium">Quick actions</h2>
         <div className="mt-4 flex flex-wrap gap-3">

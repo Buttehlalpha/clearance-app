@@ -6,6 +6,7 @@ import Signup from './pages/Signup.jsx'
 import VerifyCertificate from './pages/VerifyCertificate.jsx'
 import Preloader from './components/Preloader.jsx'
 import Dashboard from './pages/Dashboard.jsx'
+import OfficerDashboard from './pages/OfficerDashboard.jsx'
 import UserManagement from './pages/UserManagement.jsx'
 import DashboardLayout from './components/DashboardLayout.jsx'
 import ProtectedRoute from './components/ProtectedRoute.jsx'
@@ -37,6 +38,7 @@ export default function App() {
         >
           <Route index element={<Dashboard />} />
           <Route path="users" element={<UserManagement />} />
+          <Route path="review" element={<OfficerDashboard allStages />} />
         </Route>
 
         <Route path="*" element={<Landing />} />

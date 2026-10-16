@@ -92,7 +92,7 @@ export default function StudentDashboard() {
   return (
     <div>
       <motion.div initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
-        <h1 className="text-3xl font-medium">
+        <h1 className="text-2xl sm:text-3xl font-medium">
           Hi{profile?.full_name ? `, ${profile.full_name.split(' ')[0]}` : ''}.
         </h1>
         <p className="mt-1.5 text-ink/60">
@@ -122,7 +122,7 @@ export default function StudentDashboard() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.15, duration: 0.45 }}
-          className="mt-8 rounded-2xl border border-line bg-white p-8 text-center"
+          className="mt-8 rounded-2xl border border-line bg-white p-6 sm:p-8 text-center"
         >
           <p className="font-medium">You haven&rsquo;t started clearance yet.</p>
           <p className="mt-1.5 text-sm text-ink/60">Start your application for the {CURRENT_SESSION} session.</p>
@@ -143,7 +143,7 @@ export default function StudentDashboard() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.15, duration: 0.45 }}
-          className="mt-8 rounded-2xl border border-line bg-white p-6"
+          className="mt-8 rounded-2xl border border-line bg-white p-4 sm:p-6"
         >
           <div className="flex items-center justify-between flex-wrap gap-2">
             <h2 className="font-medium">Clearance — {application.session}</h2>
@@ -159,9 +159,9 @@ export default function StudentDashboard() {
                 initial={{ opacity: 0, x: -8 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.3, delay: i * 0.06 }}
-                className="flex items-center justify-between gap-4 py-2.5 border-b border-line last:border-0"
+                className="flex items-center justify-between flex-wrap gap-x-4 gap-y-2 py-2.5 border-b border-line last:border-0"
               >
-                <div>
+                <div className="min-w-0">
                   <p className="text-sm font-medium capitalize">{r.clearance_stages.name.replace('_', ' ')}</p>
                   {r.decision === 'rejected' && r.comments && (
                     <p className="text-xs text-danger mt-0.5">{r.comments}</p>
@@ -189,16 +189,16 @@ export default function StudentDashboard() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.45 }}
-          className="mt-6 rounded-2xl border border-success/30 bg-success/5 p-6"
+          className="mt-6 rounded-2xl border border-success/30 bg-success/5 p-4 sm:p-6"
         >
           <p className="font-medium text-success">Your clearance certificate is ready</p>
-          <div id="certificate-print" className="mt-4 bg-white rounded-xl border border-line p-8 text-center">
+          <div id="certificate-print" className="mt-4 bg-white rounded-xl border border-line p-5 sm:p-8 text-center">
             <p className="text-xs uppercase tracking-wide text-ink/50">Certificate of Clearance</p>
             <h3 className="mt-3 text-2xl font-display">{profile?.full_name}</h3>
             <p className="mt-1 text-sm text-ink/60">{studentProfile?.matric_number}</p>
             <p className="mt-4 text-sm text-ink/70">has successfully completed all clearance requirements for</p>
             <p className="mt-1 font-medium">{application?.session}</p>
-            <div className="mt-6 flex justify-center gap-10 text-xs text-ink/50">
+            <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-10 text-xs text-ink/50 break-all">
               <span>Ref: {certificate.certificate_ref}</span>
               <span>Code: {certificate.verification_code}</span>
             </div>
@@ -219,7 +219,7 @@ export default function StudentDashboard() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.25, duration: 0.45 }}
-          className="mt-6 rounded-2xl border border-line bg-white p-6"
+          className="mt-6 rounded-2xl border border-line bg-white p-4 sm:p-6"
         >
           <h2 className="font-medium">Exit request</h2>
           {exitRequest ? (

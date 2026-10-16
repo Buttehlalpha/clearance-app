@@ -366,3 +366,18 @@ create policy "activity log readable by staff" on activity_logs
   );
 create policy "activity log insert by authenticated" on activity_logs
   for insert to authenticated with check (true);
+
+-- ============================================================
+-- Relationship needed by the officer queue (PostgREST embeds across
+-- foreign keys): clearance_applications.student_id -> student_profiles.id
+-- ============================================================
+alter table clearance_applications
+  add constraint clearance_applications_student_profile_fkey
+  foreign key (student_id) references student_profiles (id) on delete cascade;
+
+-- Administrators must be able to update OTHER people's profiles (role, stage)
+-- from User Management; the "update own profile" policy alone blocks that.
+create policy "administrators can update any profile" on profiles
+  for update to authenticated using (
+    exists (select 1 from profiles p where p.id = auth.uid() and p.role = 'administrator')
+  );

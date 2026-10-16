@@ -38,7 +38,7 @@ export default function Landing() {
         className="sticky top-0 z-30 bg-cream/80 backdrop-blur-md border-b border-line"
       >
         <div className="container-content flex items-center justify-between py-4">
-          <div className="font-display text-lg">Campus Clearance</div>
+          <div className="font-display text-base sm:text-lg leading-tight">Campus Clearance</div>
 
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-ink/70">
             <a href="#workflow" className="hover:text-ink transition-colors">How it works</a>
@@ -46,15 +46,15 @@ export default function Landing() {
             <Link to="/verify" className="hover:text-ink transition-colors">Verify a certificate</Link>
           </nav>
 
-          <div className="flex items-center gap-3">
-            <Link to="/login" className="hidden sm:inline-block text-sm font-medium px-4 py-2 rounded-full border border-ink/15 hover:border-navy hover:text-navy transition-colors">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <Link to="/login" className="inline-block text-sm font-medium px-3 sm:px-4 py-2 rounded-full border border-ink/15 hover:border-navy hover:text-navy transition-colors">
               Sign in
             </Link>
             <Link to="/signup">
               <motion.span
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
-                className="inline-block text-sm font-medium px-4 py-2 rounded-full bg-navy text-cream hover:bg-navy-dark transition-colors"
+                className="inline-block text-sm font-medium px-3 sm:px-4 py-2 rounded-full bg-navy text-cream hover:bg-navy-dark transition-colors"
               >
                 Create account
               </motion.span>
@@ -74,19 +74,19 @@ export default function Landing() {
           <div className="absolute inset-0 bg-navy-dark/70" />
         </div>
 
-        <div className="relative z-10 container-content text-center py-24">
+        <div className="relative z-10 container-content text-center py-16 sm:py-24">
           <motion.div initial="hidden" animate="show" variants={stagger}>
             <motion.h1
               variants={fadeUp}
               transition={{ duration: 0.7, ease: 'easeOut' }}
-              className="text-4xl sm:text-5xl lg:text-6xl leading-[1.08] font-medium text-cream max-w-3xl mx-auto"
+              className="text-3xl sm:text-5xl lg:text-6xl leading-[1.08] font-medium text-cream max-w-3xl mx-auto"
             >
               Clearance day, without the running around.
             </motion.h1>
             <motion.p
               variants={fadeUp}
               transition={{ duration: 0.7, ease: 'easeOut' }}
-              className="mt-6 text-cream/80 text-lg max-w-xl mx-auto leading-relaxed"
+              className="mt-6 text-cream/80 text-base sm:text-lg max-w-xl mx-auto leading-relaxed"
             >
               Bursary, library, hostel, department and student affairs — one application,
               five stages, tracked online from start to certificate.
@@ -120,7 +120,7 @@ export default function Landing() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.6 }}
-          className="text-3xl max-w-lg"
+          className="text-2xl sm:text-3xl max-w-lg"
         >
           Five stages. One application. Full visibility.
         </motion.h2>
@@ -163,7 +163,7 @@ export default function Landing() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.6 }}
-            className="text-3xl max-w-lg text-cream"
+            className="text-2xl sm:text-3xl max-w-lg text-cream"
           >
             Built around who actually does the clearing.
           </motion.h2>
@@ -191,7 +191,7 @@ export default function Landing() {
         transition={{ duration: 0.6 }}
         className="container-content py-16 text-center"
       >
-        <h2 className="text-3xl">Ready to get cleared?</h2>
+        <h2 className="text-2xl sm:text-3xl">Ready to get cleared?</h2>
         <Link to="/signup">
           <motion.span
             whileHover={{ scale: 1.04 }}

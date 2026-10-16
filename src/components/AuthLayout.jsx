@@ -36,7 +36,7 @@ export default function AuthLayout({ children, eyebrow, title, subtitle }) {
         initial={{ opacity: 0, x: 24 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
-        className="flex items-center justify-center px-6 py-14"
+        className="flex items-center justify-center px-4 sm:px-6 py-10 sm:py-14"
       >
         <div className="w-full max-w-sm">
           <Link to="/" className="font-display text-xl lg:hidden">Campus Clearance</Link>

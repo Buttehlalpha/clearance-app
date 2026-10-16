@@ -39,7 +39,7 @@ export default function UserManagement() {
   return (
     <div>
       <motion.div initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
-        <h1 className="text-3xl font-medium">User management</h1>
+        <h1 className="text-2xl sm:text-3xl font-medium">User management</h1>
         <p className="mt-1.5 text-ink/60">
           Students create their own accounts. Promote someone to officer or administrator here —
           officers also need a stage assigned before their queue will show anything.
@@ -50,15 +50,15 @@ export default function UserManagement() {
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1, duration: 0.45 }}
-        className="mt-6 rounded-2xl border border-line bg-white overflow-hidden"
+        className="mt-6 rounded-2xl border border-line bg-white overflow-x-auto"
       >
-        <table className="w-full text-sm">
+        <table className="w-full text-sm min-w-[420px]">
           <thead className="bg-sage/40 text-left text-ink/60">
             <tr>
               <th className="px-4 py-3 font-medium">Name</th>
               <th className="px-4 py-3 font-medium">Role</th>
               <th className="px-4 py-3 font-medium">Stage</th>
-              <th className="px-4 py-3 font-medium">Joined</th>
+              <th className="px-4 py-3 font-medium hidden sm:table-cell">Joined</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-line">
@@ -97,7 +97,7 @@ export default function UserManagement() {
                     <span className="text-ink/30 text-xs">—</span>
                   )}
                 </td>
-                <td className="px-4 py-3 text-ink/50">{new Date(s.created_at).toLocaleDateString()}</td>
+                <td className="px-4 py-3 text-ink/50 hidden sm:table-cell">{new Date(s.created_at).toLocaleDateString()}</td>
               </motion.tr>
             ))}
           </tbody>
